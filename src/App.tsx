@@ -4,7 +4,7 @@ import NotFound from './pages/NotFound';
 import SearchPokemon from './pages/SearchPokemon';
 import './styles/App.scss';
 
-function App() {
+const App: React.FC = (): JSX.Element => {
   return (
     <Router>
       <Routes>
