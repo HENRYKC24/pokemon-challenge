@@ -8,11 +8,11 @@ interface LayoutProps {
 
 const PageLayout: React.FC<LayoutProps> = ({ children }): JSX.Element => {
   return (
-    <section>
+    <>
       <Header />
       {children}
       <Footer />
-    </section>
+    </>
   );
 };
 
