@@ -1,5 +1,5 @@
 import React from 'react';
-import PageLayout from '../containers/PageLayout';
+import PageLayout from '../../containers/PageLayout';
 
 const SearchPokemon: React.FC = (): JSX.Element => {
   return (

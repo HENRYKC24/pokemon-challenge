@@ -12,11 +12,16 @@
     color: rgb(224, 147, 13);
   }
 
-  a:hover {
+  li a:hover {
     color: rgb(224, 147, 13);
   }
   
-  
+  .innerDiv {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+  }
 
   .nav {
     display: flex;
