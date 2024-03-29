@@ -1,3 +1,20 @@
-// .parent {
-  // min-height: 100vh;
-// }
+.parent {
+  padding: 0 2rem 1rem;
+
+  h1 {
+    text-align: center;
+    padding-top: 20px;
+    text-shadow: 2px 2px #daac2f;
+    font-size: 3rem;
+  }
+
+  p, li {
+    color: #161511;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px #fefefd;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+  }
+}
