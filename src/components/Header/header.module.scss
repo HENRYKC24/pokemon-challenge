@@ -2,7 +2,8 @@
   color: rgb(29, 26, 26);
   padding: 1rem 2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+  position: static;
+  
   a {
     color: rgb(29, 26, 26);
     text-decoration: none;
@@ -75,7 +76,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: #2f73da;
+    background-color: #e3e8ee;
     flex-direction: column;
     gap: 20px;
     align-items: center;
