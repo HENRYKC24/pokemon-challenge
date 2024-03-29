@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+
+  .pagination {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+
+    .page_btn {
+      background-color: transparent;
+      border: 1px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #5c5c5c;
+      cursor: pointer;
+
+      &.active {
+        background-color: #d47e0e;
+        color: #fff;
+      }
+
+      &:first-child {
+        border-radius: 8px 0 0 8px;
+      }
+
+      &:last-child {
+        border-radius: 0 8px 8px 0;
+      }
+
+      &::after {
+        content: attr(data-page);
+        display: block;
+      }
+    }
+
+    &.loading::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      margin-left: 12px;
+      background-color: #1437d3;
+      mask-size: 100% 100%;
+      mask-image: url(../../assets/images/ring.webp);
+      animation: spin normal 1s infinite linear;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
