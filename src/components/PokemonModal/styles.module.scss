@@ -1,0 +1,132 @@
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 3;
+  overflow: auto;
+
+  .close_btn {
+    position: absolute;
+    right: 16px;
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    transform: scale(1.2);
+    transition: transform 0.3s linear;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0;
+
+    &:hover {
+      transform: scale(1.4);
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: #c01818;
+      mask-repeat: no-repeat;
+      mask-image: url(../../assets/images/close.svg);
+    }
+  }
+
+  .upper_row {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .name_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    .id {
+      font-weight: bold;
+      font-size: 72px;
+      color: #c5c5c5;
+    }
+
+    .name {
+      font-size: 64px;
+      font-weight: 500;
+      color: #5c5c5c;
+    }
+
+    @media only screen and (min-width: 576px) {
+      flex-direction: row;
+      justify-content: center;
+      gap: 24px;
+    }
+  }
+
+  .home_sprite_wrap {
+    display: flex;
+    justify-content: center;
+
+    .home_sprite {
+      width: 180px;
+    }
+  }
+
+  .types_wrap {
+    display: flex;
+    justify-content: center;
+    padding: 48px 16px 0;
+
+    .types {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      width: 100%;
+      max-width: 480px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 8px 16px;
+
+      .types_title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #27292b;
+      }
+
+      .types_text {
+        font-weight: 500;
+        font-size: 18px;
+        color: #5c5c5c;
+      }
+    }
+  }
+
+  .sprite_board {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    overflow-x: auto;
+    justify-content: center;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .sprite_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .sprite_name {
+      font-weight: 500;
+      font-size: 18px;
+      color: #5c5c5c;
+    }
+  }
+}
