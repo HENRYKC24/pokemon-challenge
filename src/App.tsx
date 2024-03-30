@@ -2,9 +2,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import SearchPokemon from './pages/SearchPokemon';
-import './styles/App.scss';
+import './styles/global.scss';
 
-function App() {
+const App: React.FC = (): JSX.Element => {
   return (
     <Router>
       <Routes>

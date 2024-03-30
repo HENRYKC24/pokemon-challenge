@@ -1,0 +1,101 @@
+.header {
+  color: rgb(29, 26, 26);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: static;
+  
+  a {
+    color: rgb(29, 26, 26);
+    text-decoration: none;
+    font-size: large;
+  }
+
+  .active {
+    color: #daac2f;
+  }
+
+  li a:hover {
+    color: #daac2f;
+  }
+
+  .innerDiv {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .mobile {
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    z-index: 100;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+
+    }
+  }
+
+  .hamburger {
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+      cursor: pointer;
+    }
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      gap: 20px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+  }
+
+  .mobile {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #e3e8ee;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    & > ul:first-of-type {
+      flex-direction: column;
+      margin-top: 70px;
+    }
+
+    .closeBtn {
+      position: absolute;
+      right: 17px;
+      margin-top: 25px;
+    }
+
+    .closeBtn:hover {
+      cursor: pointer;
+    }
+  }
+}
