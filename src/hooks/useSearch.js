@@ -53,18 +53,30 @@ const useSearch = () => {
     setLoading(true);
     dispatch(searchAsync(term, (pokemon) => {
       const pokemons = pokemon ? [pokemon] : [];
-      setState({ pokemons, totalPages: 1, currentPage: 1, isSearch: true });
+      setState((state) => ({ pokemons, totalPages: 1, currentPage: state.currentPage, isSearch: true }));
       setLoading(false);
     }));
   }, [dispatch]);
 
   const reset = useCallback(() => {
     const totalPages = Math.ceil(allPokemons.length / PER_PAGE);
-      const pokemons = allPokemons.length > PER_PAGE
-        ? allPokemons.filter((p, idx) => idx < PER_PAGE)
-        : allPokemons;
+    setState((state) => {
+      let pokemons = allPokemons;
 
-      setState({ pokemons, totalPages, currentPage: 1, isSearch: false });
+      if (pokemons.length > PER_PAGE) {
+        const start = ((state.currentPage || 1) - 1) * PER_PAGE;
+        const end = start + PER_PAGE;
+
+        pokemons = pokemons.filter((_, idx) => idx >= start && idx < end);
+      }
+
+      return {
+        pokemons,
+        totalPages,
+        currentPage: state.currentPage,
+        isSearch: false,
+      }
+    });
   }, [allPokemons]);
 
   const setPage = useCallback((page) => {
