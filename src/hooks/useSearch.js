@@ -9,6 +9,7 @@ import {
 } from '../redux/pokemon';
 
 const PER_PAGE = 20;
+const loadedPages = [];
 
 const useSearch = () => {
   const [loading, setLoading] = useState(false);
@@ -22,11 +23,12 @@ const useSearch = () => {
   });
   const loaded = useSelector(selectLoaded);
   const loadedRef = useRef(false);
-  const loadedPages = useRef([]);
 
   useEffect(() => {
-    setLoading(true);
-    dispatch(fetchPokemonsAsync());
+    if (!loaded) {
+      setLoading(true);
+      dispatch(fetchPokemonsAsync());
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -39,7 +41,7 @@ const useSearch = () => {
       loadedRef.current = true;
       dispatch(fetchPageAsync(0, PER_PAGE, (pokemons) => {
         const totalPages = Math.ceil(allPokemons.length / PER_PAGE);
-        loadedPages.current.push(1);
+        loadedPages.push(1);
         setState({ pokemons, currentPage: 1, totalPages });
   
         setLoading(false);
@@ -72,7 +74,7 @@ const useSearch = () => {
 
     console.log({ page });
 
-    if (loadedPages.current.includes(page)) {
+    if (loadedPages.includes(page)) {
       console.log('Here');
       const pokemons = allPokemons.filter((p, idx) => idx >= offset && idx < lastIndex);
       setState({ pokemons, currentPage: page, totalPages, isSearch: false });
@@ -83,7 +85,7 @@ const useSearch = () => {
         setState({ pokemons, totalPages, currentPage: page, isSearch: false });
 
         setLoading(false);
-        loadedPages.current.push(page);
+        loadedPages.push(page);
       }));
     }
   }, [allPokemons, dispatch]);

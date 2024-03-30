@@ -51,7 +51,7 @@ export const fetchPageAsync = (start, count, callback) => (dispatch, getState) =
   const filtered = range.filter((it) => !it.sprites);
 
   if (!filtered.length) {
-    callback(items.filter(range));
+    callback(range);
     return;
   }
 
