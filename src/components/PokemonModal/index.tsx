@@ -1,5 +1,7 @@
 import React, { useMemo } from 'react';
 import css from './styles.module.scss';
+import Icon from "@mdi/react";
+import { mdiWindowClose } from "@mdi/js";
 
 interface Type {
   name: string;
@@ -104,7 +106,9 @@ const PokemonModal: React.FC<PokemonModalProps> = ({ pokemon, onClose }): JSX.El
         title="Close"
         onClick={onClose}
         className={css.close_btn}
-      />
+      >
+        <Icon path={mdiWindowClose} size={1.5} />
+      </button>
     </section>
   );
 };
