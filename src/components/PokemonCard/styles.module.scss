@@ -1,0 +1,29 @@
+.card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #bbc4c7;
+  outline: none;
+  border-radius: 8px;
+  padding: 0 24px 24px;
+  transition: transform 0.3s linear;
+
+  &:hover {
+    transform: scale(1.05);
+    z-index: 2;
+  }
+
+  .name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #5c5c5c;
+  }
+
+  .sprite {
+    width: 100%;
+  }
+}

@@ -65,12 +65,6 @@ const Header: React.FC = (): JSX.Element => {
             hamburgerMenuRef.current.style.display = "none";
           }
         }
-        // if (mobileRef.current) {
-        //   mobileRef.current.style.display = 'none';
-        //   if (hamburgerMenuRef.current) {
-        //     hamburgerMenuRef.current.style.display = "none";
-        //   }
-        // }
       } else {
         if (desktopRef.current) {
           desktopRef.current.style.display = "none";
@@ -78,12 +72,6 @@ const Header: React.FC = (): JSX.Element => {
             hamburgerMenuRef.current.style.display = "flex";
           }
         }
-        // if (mobileRef.current) {
-        //   mobileRef.current.style.display = 'flex';
-        //   if (hamburgerMenuRef.current) {
-        //     hamburgerMenuRef.current.style.display = "flex";
-        //   }
-        // }
       }
     });
   }, []);
@@ -113,7 +101,7 @@ const Header: React.FC = (): JSX.Element => {
                 to="/pokemon-list"
                 className={getActiveTab() === "Search" ? css.active : ""}
               >
-                Search
+                Explore
               </Link>
             </li>
           <Socials height={20} width={20} gap="20px" size={1.2} />
