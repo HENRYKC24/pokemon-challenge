@@ -7,7 +7,7 @@ const Home: React.FC = (): JSX.Element => {
   return (
     <PageLayout>
       <div className={css.parent}>
-        <h1>Welcome to Pokémon Explorer!</h1>
+        <h1>Welcome To<br />Pokémon Explorer!</h1>
         <p>
           Discover the vast world of Pokémon right at your fingertips. Whether
           you're a seasoned Trainer or just starting your journey, Pokémon
