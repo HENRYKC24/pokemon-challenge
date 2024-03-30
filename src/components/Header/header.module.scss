@@ -32,6 +32,8 @@
   .mobile {
     flex-direction: column;
     display: none;
+    position: absolute;
+    z-index: 100;
 
     @media screen and (max-width: 768px) {
       display: none;

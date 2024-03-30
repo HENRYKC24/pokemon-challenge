@@ -6,6 +6,7 @@ import PokemonCard from '../../components/PokemonCard';
 import useModal from '../../hooks/useModal';
 import css from './styles.module.scss';
 import Paginationation from '../../components/Pagination';
+import PageLayout from '../../containers/PageLayout';
 
 const TERM = 'term';
 
@@ -38,7 +39,8 @@ const SearchPokemon = () => {
   };
 
   return (
-    <main className={css.main}>
+    <PageLayout>
+      <main className={css.main}>
       <div className={css.form_container}>
         <form onSubmit={handleSubmit} className={css.form}>
           <input
@@ -91,6 +93,7 @@ const SearchPokemon = () => {
         <Loader />
       ) : null}
     </main>
+    </PageLayout>
   );
 };
 
